@@ -25,17 +25,19 @@ public class RightFragmentCarConfig extends Fragment {
 	private RadioButton radioButton_Volkswagen;
 	private RadioButton radioButton_Sonata8;
 	private RadioButton radioButton_Other;
+	private RadioButton radioButton_2003_Impala;
 	
 	private SharedPreferences preferences;
 	private static int Car_RadioButton_Flag;		//保存RadioButton信息的全局变量
 	private static int Car_Flag = 0;					//全局变量:保存从CanBusService传过来的车型值 -->大众：0 ,索纳塔8代:1 其他:3
 	private final int Volkswagen = 0;		//大众
 	private final int Sonata8 = 1;		//索纳塔8代
-	private final int OTHER= 2;		//索纳塔8代
+	private final int OTHER = 2;		//索纳塔8代
+	private final int 2003_Impala = 3;
 	private final int Volkswagen_CHECKED = 1;		//Volkswagen RadioButton被按下
 	private final int Sonata8_CHECKED = 2;			//Sonata8 RadioButton被按下
 	private final int OTHER_CHECKED = 3;			//Other RadioButton被按下
-	
+	private final int 2003_Impala_CHECKED = 4;
 
 	@Override
 	public void onAttach(Activity activity) {
