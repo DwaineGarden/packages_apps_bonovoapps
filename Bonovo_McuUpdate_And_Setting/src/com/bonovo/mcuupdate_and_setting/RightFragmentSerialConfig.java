@@ -24,15 +24,18 @@ public class RightFragmentSerialConfig extends Fragment {
 	private RadioButton radioButton_OBD;
 	private RadioButton radioButton_CAN;
 	private RadioButton radioButton_NON;
+	private RadioButton radioButton_BT_CANBUS
 	private SharedPreferences preferences;
 	private static int serial_RadioButton_Flag; //保存RadioButton信息的全局变量
 	private static int Serial_Flag = 0;					//全局变量:保存从CanBusService传过来的Serial值 -->OBD：1 ,CAN:2 ,Non:0
 	private final int OBD = 1;			//OBD 
 	private final int CAN = 2;			//CAN 
-	private final int NON = 0;			//NON 
+	private final int NON = 0;			//NON
+	private final int BT_CANBUS = 3;                //BT CanBus Option
 	private final int OBD_CHECKED = 1;			//OBD RadioButton被按下
 	private final int CAN_CHECKED = 2;			//CAN RadioButton被按下
 	private final int NON_CHECKED = 0;			//NON RadioButton被按下
+	private final int BT_CANBUS_CHECKED = 3;		// Bluetooth CanBus
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -62,6 +65,8 @@ public class RightFragmentSerialConfig extends Fragment {
 		radioButton_OBD = (RadioButton)view.findViewById(R.id.radioOBD);
 		radioButton_CAN = (RadioButton)view.findViewById(R.id.radioCAN);
 		radioButton_NON = (RadioButton)view.findViewById(R.id.radioNON);
+		radioButton_BT_CANBUS = (RadioButton)view.findViewById(R.id.radioNON);
+		
 		
 //		Intent sendIntent = new Intent("com.android.internal.car.can.action.SERIAL_TYPE_REQUEST");
 //		 context.sendBroadcast(sendIntent);
@@ -96,6 +101,16 @@ public class RightFragmentSerialConfig extends Fragment {
 				}else if (checkedId== radioButton_NON.getId()) {
 					serial_RadioButton_Flag = NON;		//将全局变量赋为NON
 					FragmentService.serialType = NON;
+					Intent intent = new Intent("com.android.internal.car.can.action.SERIAL_TYPE_CHANGED");
+					intent.putExtra("serial_type", serial_RadioButton_Flag);
+					context.sendBroadcast(intent);
+					preferences = context.getSharedPreferences("serial_checked_result", Context.MODE_WORLD_READABLE);	//保存全局变量的信息
+					preferences.edit()
+									  .putInt("radioButton_Checked_Flag", serial_RadioButton_Flag)
+									  .commit();
+				}else if (checkedId== radioButton_BT_CANBUS.getId()) {
+					serial_RadioButton_Flag = BT_CANBUS;		//将全局变量赋为NON
+					FragmentService.serialType = BT_CANBUS
 					Intent intent = new Intent("com.android.internal.car.can.action.SERIAL_TYPE_CHANGED");
 					intent.putExtra("serial_type", serial_RadioButton_Flag);
 					context.sendBroadcast(intent);
@@ -138,6 +153,8 @@ public class RightFragmentSerialConfig extends Fragment {
 			radioButton_CAN.setChecked(true);
 		}else if (serial_RadioButton_Flag == NON_CHECKED) {
 			radioButton_NON.setChecked(true);
+		}else if (serial_RadioButton_Flag == BT_CANBUS_CHECKED) {
+			radioButton_BT_CANBUS.setChecked(true);
 		}
 	}
 	
@@ -161,6 +178,8 @@ public class RightFragmentSerialConfig extends Fragment {
 					radioButton_CAN.setChecked(true);
 				}else if (Serial_Flag == NON) {
 					radioButton_NON.setChecked(true);
+				}else if (Serial_Flag == BT_CANBUS) {
+					radioButton_BT_CANBUS.setChecked(true);
 				}
 			}
 		}
