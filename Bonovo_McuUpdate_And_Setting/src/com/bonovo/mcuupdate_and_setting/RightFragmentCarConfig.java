@@ -68,6 +68,7 @@ public class RightFragmentCarConfig extends Fragment {
 		 radioButton_Volkswagen = (RadioButton)view.findViewById(R.id.radioVolkswagen);
 		 radioButton_Sonata8 = (RadioButton)view.findViewById(R.id.radioSonata8);
 		 radioButton_Other = (RadioButton)view.findViewById(R.id.radioOther);
+		 radioButton_2003_Impala = (RadioButton)view.findViewById(R.id.radio2003_Impala);
 		 readSharePreConfig();
 		 checkRadioButton();
 //		 Intent sendIntent = new Intent("com.android.internal.car.can.action.CAR_TYPE_REQUEST");
@@ -110,6 +111,16 @@ public class RightFragmentCarConfig extends Fragment {
 					Intent intent = new Intent("com.android.internal.car.can.action.CAR_TYPE_CHANGED");
 					intent.putExtra("car_type", Car_RadioButton_Flag);
 					context.sendBroadcast(intent);
+				}else if (checkedId == radioButton_2003_Impala.getId()) {
+					Car_RadioButton_Flag = 2003_Impala;	
+					FragmentService.carType = 2003_Impala;
+					preferences = context.getApplicationContext().getSharedPreferences("car_checked_result", Context.MODE_WORLD_READABLE);	//保存全局变量的信息
+					preferences.edit()
+									  .putInt("radioButton_Checked_Flag", Car_RadioButton_Flag)
+									  .commit();
+					Intent intent = new Intent("com.android.internal.car.can.action.CAR_TYPE_CHANGED");
+					intent.putExtra("car_type", Car_RadioButton_Flag);
+					context.sendBroadcast(intent);
 				}
 			}
 		});
@@ -144,6 +155,8 @@ public class RightFragmentCarConfig extends Fragment {
 		}else if (Car_RadioButton_Flag == Sonata8) {
 			radioButton_Sonata8.setChecked(true);
 		}else if (Car_RadioButton_Flag == OTHER) {
+			radioButton_Other.setChecked(true);
+		}else if (Car_RadioButton_Flag == 2003_Impala) {
 			radioButton_Other.setChecked(true);
 		}
 	}
@@ -183,6 +196,8 @@ public class RightFragmentCarConfig extends Fragment {
 					radioButton_Sonata8.setChecked(true);
 				} else if (Car_Flag == OTHER) {
 					radioButton_Other.setChecked(true);
+				} else if (Car_Flag == 2003_Impala) {
+					radioButton_2003_Impala.setChecked(true);
 				}
 			}
 		}
