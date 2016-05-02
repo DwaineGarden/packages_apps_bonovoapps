@@ -15,6 +15,8 @@
     <string name="radio_volume">Radio-Volume</string>
     <string name="fmsearch">Start searching the FM band frequency?</string>
     <string name="amsearch">Start searching the AM band frequency?</string>
+    <string name="LWsearch">Start searching the LW band frequency?</string>
+    <string name="SWsearch">Start searching the SW band frequency?</string>
     <string name="import_title">Import-Preset</string>
     <string name="import_preset">Preset</string>
     <string name="import_define">Define</string>
