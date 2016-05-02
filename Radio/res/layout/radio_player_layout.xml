@@ -180,7 +180,20 @@
             android:background="@drawable/btnbottonam"
             android:layout_marginTop="349dp"
             android:layout_marginLeft="2dp"/>
-        
+        <Button 
+            android:id="@+id/btnLW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnbottonLW"
+            android:layout_marginTop="349dp"
+            android:layout_marginLeft="2dp"/>
+        <Button 
+            android:id="@+id/btnSW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btnbottonSW"
+            android:layout_marginTop="349dp"
+            android:layout_marginLeft="2dp"/>
         <Button 
             android:id="@+id/btnsetting"
             android:layout_width="wrap_content"
