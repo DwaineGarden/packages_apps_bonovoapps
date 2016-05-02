@@ -37,6 +37,9 @@ public class RadioSetting extends Activity implements OnClickListener ,ServiceCo
 	private RadioButton checkITURegion1Button;
 	private RadioButton checkITURegion2Button;
 	private RadioButton checkITURegion3Button;
+	private RadioButton checkLWButton;
+	private RadioButton checkSWButton;
+	
 	private SeekBar mSeekBar;
 	private boolean remoteCheck;
 	
@@ -133,6 +136,8 @@ public class RadioSetting extends Activity implements OnClickListener ,ServiceCo
 		checkITURegion1Button = (RadioButton) findViewById(R.id.checkITURegion1);
 		checkITURegion2Button = (RadioButton) findViewById(R.id.checkITURegion2);
 		checkITURegion3Button = (RadioButton) findViewById(R.id.checkITURegion3);
+		checkLWButton = (RadioButton) findViewById(R.id.checkLW);
+		checkSWButton = (RadioButton) findViewById(R.id.checkSW);
 		final SharedPreferences modelpre = getSharedPreferences(
 				"CHECKED", 0);
 		if(modelpre.getInt("modelCheck", checkChinaButton.getId()) == checkChinaButton.getId()){
@@ -147,6 +152,10 @@ public class RadioSetting extends Activity implements OnClickListener ,ServiceCo
 			checkITURegion2Button.setChecked(true);
 		}else if (modelpre.getInt("modelCheck", checkITURegion3Button.getId()) == checkITURegion3Button.getId()) {
 			checkITURegion3Button.setChecked(true);
+		}else if (modelpre.getInt("modelCheck", checkLWButton.getId()) == checkLWButton.getId()) {
+			checkLWButton.setChecked(true);
+		}else if (modelpre.getInt("modelCheck", checkSWButton.getId()) == checkSWButton.getId()) {
+			checkSWButton.setChecked(true);
 		}
 		mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			
