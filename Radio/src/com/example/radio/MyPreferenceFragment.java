@@ -138,6 +138,18 @@ public class MyPreferenceFragment extends PreferenceFragment implements
 				Intent intent = new Intent();
 				intent.setAction("updateFreqView");
 				context.sendBroadcast(intent);
+			}else if(newValue.equals("7")){
+				modelpre.edit().putInt("radioModel", RadioService.LW_MODEL).commit();
+				callbackSetting.readModelInfo();
+				Intent intent = new Intent();
+				intent.setAction("updateFreqView");
+				context.sendBroadcast(intent);
+			}else if(newValue.equals("8")){
+				modelpre.edit().putInt("radioModel", RadioService.SW_MODEL).commit();
+				callbackSetting.readModelInfo();
+				Intent intent = new Intent();
+				intent.setAction("updateFreqView");
+				context.sendBroadcast(intent);
 			}
 		}
 		return true;
