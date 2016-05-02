@@ -104,6 +104,16 @@
             android:layout_marginTop="332dp"
             android:text="@string/ITURegion3"
             android:textSize="25sp" />
+        <RadioButton
+            android:id="@+id/checkLW"
+            android:layout_marginTop="332dp"
+            android:text="@string/LW"
+            android:textSize="25sp" />
+        <RadioButton
+            android:id="@+id/checkSW"
+            android:layout_marginTop="332dp"
+            android:text="@string/SW"
+            android:textSize="25sp" />
     </RadioGroup>
 
 </RelativeLayout>
