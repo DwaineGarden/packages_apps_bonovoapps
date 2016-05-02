@@ -62,6 +62,8 @@ public class RadioService extends Service implements RadioInterface,
 	public static final int RADIO_PAGE_COUNT = 48;
 	public static final int RADIO_FM_COUNT = 48;
 	public static final int RADIO_AM_COUNT = 48;
+	public static final int RADIO_LW_COUNT = 48;
+	public static final int RADIO_SW_COUNT = 48;
 	public static final int RADIO_CHANNEL_COUNT = 144;
 	public static int FLAG_AUTO = 0;		//自动搜台标记
 	public static int STEP_OR_AUTO;			//step or auto flag
@@ -74,12 +76,23 @@ public class RadioService extends Service implements RadioInterface,
 	public static final int ITUREGION1_MODEL = 3;
 	public static final int ITUREGION2_MODEL = 4;
 	public static final int ITUREGION3_MODEL = 5;
+	public static final int LW_MODEL = 6;
+	public static final int SW_MODEL = 7;
+	
 	public static int RADIO_MODEL = 0;
 	
 	public static  int FM_LOW_FREQ = 8700;
 	public static  int FM_HIGH_FREQ = 10800;
 	public static  int AM_LOW_FREQ = 520;
 	public static  int AM_HIGH_FREQ = 1710;
+	
+	// LW band support (144–288 kHz)
+	public static  int LW_LOW_FREQ = 14400;
+	public static  int LW_HIGH_FREQ = 22800;
+	
+	// SW band support (2.3–30 MHz)
+	public static  int SW_LOW_FREQ = 0230;
+	public static  int SW_HIGH_FREQ = 3000;
 
 	private static final int UPDATE_CHANNEL_LIST = 0;
 	private static final int UPDATE_DETAIL_FREQ = 1;
