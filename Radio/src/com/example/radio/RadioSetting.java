@@ -210,6 +210,22 @@ public class RadioSetting extends Activity implements OnClickListener ,ServiceCo
 					Intent intent = new Intent();
 					intent.setAction("updateFreqView");
 					sendBroadcast(intent);
+				}else if(checkedId == checkLWButton.getId()){
+					modelpre.edit().putInt("radioModel", RadioService.LW_MODEL)
+								   .putInt("modelCheck", checkedId)
+								   .commit();
+					mSerivce2.readAndSetModelInfo();
+					Intent intent = new Intent();
+					intent.setAction("updateFreqView");
+					sendBroadcast(intent);
+				}else if(checkedId == checkSWButton.getId()){
+					modelpre.edit().putInt("radioModel", RadioService.SW_MODEL)
+								   .putInt("modelCheck", checkedId)
+								   .commit();
+					mSerivce2.readAndSetModelInfo();
+					Intent intent = new Intent();
+					intent.setAction("updateFreqView");
+					sendBroadcast(intent);
 				}
 			}
 		});		
