@@ -64,6 +64,9 @@ public class RadioActivity extends Activity implements
 	private static final int DIALOG_EDIT = 3;
 	private static final int DIALOG_INPUTFREQ_FM = 4;
 	private static final int DIALOG_INPUTFREQ_AM = 5;
+	private static final int DIALOG_INPUTFREQ_LW = 6;
+	private static final int DIALOG_INPUTFREQ_SW = 7;
+	
 
 	private static boolean mDown = false;			//keyEvent flag
 
@@ -96,6 +99,8 @@ public class RadioActivity extends Activity implements
 	private Button mButtonButtonFm1;
 	private Button mButtonButtonFm2;
 	private Button mButtonButtonAm;
+	private Button mButtonButtonLW;
+	private Button mButtonButtonSW;
 	private Button mButtonButtonSetting;
 	private Button mButtonButtoncollect;
 	private Button mButtonButtonHeart;
