@@ -177,9 +177,6 @@ typedef enum
 #define ITUREGION3_SW_FREQ_MAX      1611         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
 #define ITUREGION3_SW_STEP_LENGTH   9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
 
-
-
-
 // standard model selectors
 #define MODEL_CHINA                 0            // �й���ʽ
 #define MODEL_JNP                   1            // �ձ���ʽ
@@ -415,7 +412,8 @@ int setRangeAndStep(int mode, int band)
 			break;
 		}
 		break;
-	case BAND_LW:switch(cur_model)
+	case BAND_LW:
+		switch(cur_model)
 		{
 		case MODEL_CHINA:
 			freq_min = CHINA_LW_FREQ_MIN;
@@ -759,7 +757,46 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_AM_FREQ_MIN)
 				freq = ITUREGION3_AM_FREQ_MAX;
 		}
-
+	} else {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_LW_FREQ_MIN)
+				freq = CHINA_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_LW_FREQ_MIN)
+				freq = JNP_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_LW_FREQ_MIN)
+				freq = EUROPE_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_LW_FREQ_MIN)
+				freq = ITUREGION1_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_LW_FREQ_MIN)
+				freq = ITUREGION2_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_LW_FREQ_MIN)
+				freq = ITUREGION3_LW_FREQ_MAX;
+		}
+	} else {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_SW_FREQ_MIN)
+				freq = CHINA_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_SW_FREQ_MIN)
+				freq = JNP_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_SW_FREQ_MIN)
+				freq = EUROPE_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_SW_FREQ_MIN)
+				freq = ITUREGION1_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_SW_FREQ_MIN)
+				freq = ITUREGION2_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_SW_FREQ_MIN)
+				freq = ITUREGION3_SW_FREQ_MAX;
+		}
 	}
 
 	if (mtype == 0) {
@@ -931,6 +968,46 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_AM_FREQ_MIN)
 				freq = ITUREGION3_AM_FREQ_MAX;
 		}
+	} else {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_LW_FREQ_MIN)
+				freq = CHINA_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_LW_FREQ_MIN)
+				freq = JNP_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_LW_FREQ_MIN)
+				freq = EUROPE_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_LW_FREQ_MIN)
+				freq = ITUREGION1_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_LW_FREQ_MIN)
+				freq = ITUREGION2_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_LW_FREQ_MIN)
+				freq = ITUREGION3_LW_FREQ_MAX;
+		}
+	} else {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_SW_FREQ_MIN)
+				freq = CHINA_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_SW_FREQ_MIN)
+				freq = JNP_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_SW_FREQ_MIN)
+				freq = EUROPE_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_SW_FREQ_MIN)
+				freq = ITUREGION1_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_SW_FREQ_MIN)
+				freq = ITUREGION2_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_SW_FREQ_MIN)
+				freq = ITUREGION3_SW_FREQ_MAX;
+		}
 	}
 
 	if (mtype == 0) {
@@ -973,6 +1050,26 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 		} else if (cur_model == MODEL_ITUREGION3) {
 			if (freq > ITUREGION3_AM_FREQ_MAX)
 				freq = ITUREGION3_AM_FREQ_MIN;
+		}
+	} else {
+		if (cur_model == MODEL_CHINA) {
+			if (freq > CHINA_LW_FREQ_MAX)
+				freq = CHINA_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq > JNP_LW_FREQ_MAX)
+				freq = JNP_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq > EUROPE_LW_FREQ_MAX)
+				freq = EUROPE_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq > ITUREGION1_LW_FREQ_MAX)
+				freq = ITUREGION1_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq > ITUREGION2_LW_FREQ_MAX)
+				freq = ITUREGION2_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq > ITUREGION3_LW_FREQ_MAX)
+				freq = ITUREGION3_LW_FREQ_MIN;
 		}
 	}
 
