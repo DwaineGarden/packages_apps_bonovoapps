@@ -737,7 +737,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 				freq = ITUREGION3_FM_FREQ_MAX;
 		}
 
-	} else {
+	} else if (mtype == 1) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_AM_FREQ_MIN)
 				freq = CHINA_AM_FREQ_MAX;
@@ -757,7 +757,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_AM_FREQ_MIN)
 				freq = ITUREGION3_AM_FREQ_MAX;
 		}
-	} else {
+	} else if (mtype == 2) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_LW_FREQ_MIN)
 				freq = CHINA_LW_FREQ_MAX;
@@ -777,7 +777,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_LW_FREQ_MIN)
 				freq = ITUREGION3_LW_FREQ_MAX;
 		}
-	} else {
+	} else if (mtype == 3) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_SW_FREQ_MIN)
 				freq = CHINA_SW_FREQ_MAX;
@@ -820,7 +820,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 				freq = ITUREGION3_FM_FREQ_MIN;
 		}
 
-	} else {
+	} else if (mtype == 1) {
 		if(cur_model == MODEL_CHINA){
 			if (freq > CHINA_AM_FREQ_MAX)
 				freq = CHINA_AM_FREQ_MIN;
@@ -840,7 +840,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq > ITUREGION3_AM_FREQ_MAX)
 				freq = ITUREGION3_AM_FREQ_MIN;
 		}
-	} else {
+	} else if (mtype == 2) {
 		if(cur_model == MODEL_CHINA){
 			if (freq > CHINA_LW_FREQ_MAX)
 				freq = CHINA_LW_FREQ_MIN;
@@ -860,7 +860,7 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq > ITUREGION3_LW_FREQ_MAX)
 				freq = ITUREGION3_LW_FREQ_MIN;
 		}
-	} else {
+	} else if (mtype == 3) {
 		if(cur_model == MODEL_CHINA){
 			if (freq > CHINA_SW_FREQ_MAX)
 				freq = CHINA_SW_FREQ_MIN;
@@ -948,7 +948,7 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 				freq = ITUREGION3_FM_FREQ_MAX;
 		}
 
-	} else {
+	} else if (mtype == 1) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_AM_FREQ_MIN)
 				freq = CHINA_AM_FREQ_MAX;
@@ -968,7 +968,7 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_AM_FREQ_MIN)
 				freq = ITUREGION3_AM_FREQ_MAX;
 		}
-	} else {
+	} else if (mtype == 2) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_LW_FREQ_MIN)
 				freq = CHINA_LW_FREQ_MAX;
@@ -988,7 +988,7 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_LW_FREQ_MIN)
 				freq = ITUREGION3_LW_FREQ_MAX;
 		}
-	} else {
+	} else if (mtype == 3) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_SW_FREQ_MIN)
 				freq = CHINA_SW_FREQ_MAX;
@@ -1031,7 +1031,7 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 				freq = ITUREGION3_FM_FREQ_MIN;
 		}
 
-	} else {
+	} else if (mtype == 1) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq > CHINA_AM_FREQ_MAX)
 				freq = CHINA_AM_FREQ_MIN;
@@ -1051,7 +1051,7 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 			if (freq > ITUREGION3_AM_FREQ_MAX)
 				freq = ITUREGION3_AM_FREQ_MIN;
 		}
-	} else {
+	} else if (mtype == 2) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq > CHINA_LW_FREQ_MAX)
 				freq = CHINA_LW_FREQ_MIN;
@@ -1070,6 +1070,26 @@ static int android_radio_FineLeft(JNIEnv *env, jobject thiz, jint freq)
 		} else if (cur_model == MODEL_ITUREGION3) {
 			if (freq > ITUREGION3_LW_FREQ_MAX)
 				freq = ITUREGION3_LW_FREQ_MIN;
+		}
+	} else if (mtype == 3) {
+		if (cur_model == MODEL_CHINA) {
+			if (freq > CHINA_SW_FREQ_MAX)
+				freq = CHINA_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq > JNP_SW_FREQ_MAX)
+				freq = JNP_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq > EUROPE_SW_FREQ_MAX)
+				freq = EUROPE_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq > ITUREGION1_SW_FREQ_MAX)
+				freq = ITUREGION1_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq > ITUREGION2_SW_FREQ_MAX)
+				freq = ITUREGION2_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq > ITUREGION3_SW_FREQ_MAX)
+				freq = ITUREGION3_SW_FREQ_MIN;
 		}
 	}
 
@@ -1136,7 +1156,7 @@ static int android_radio_FineRight(JNIEnv *env, jobject thiz, jint freq)
 			if (freq > ITUREGION3_FM_FREQ_MAX)
 				freq = ITUREGION3_FM_FREQ_MIN;
 		}
-	} else {
+	} else if (mtype == 1) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq > CHINA_AM_FREQ_MAX)
 				freq = CHINA_AM_FREQ_MIN;
@@ -1155,6 +1175,46 @@ static int android_radio_FineRight(JNIEnv *env, jobject thiz, jint freq)
 		} else if (cur_model == MODEL_ITUREGION3) {
 			if (freq > ITUREGION3_AM_FREQ_MAX)
 				freq = ITUREGION3_AM_FREQ_MIN;
+		}
+	} else if (mtype == 2) {
+		if (cur_model == MODEL_CHINA) {
+			if (freq > CHINA_LW_FREQ_MAX)
+				freq = CHINA_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq > JNP_LW_FREQ_MAX)
+				freq = JNP_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq > EUROPE_LW_FREQ_MAX)
+				freq = EUROPE_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq > ITUREGION1_LW_FREQ_MAX)
+				freq = ITUREGION1_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq > ITUREGION2_LW_FREQ_MAX)
+				freq = ITUREGION2_LW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq > ITUREGION3_LW_FREQ_MAX)
+				freq = ITUREGION3_LW_FREQ_MIN;
+		}
+	} else if (mtype == 3) {
+		if (cur_model == MODEL_CHINA) {
+			if (freq > CHINA_SW_FREQ_MAX)
+				freq = CHINA_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq > JNP_SW_FREQ_MAX)
+				freq = JNP_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq > EUROPE_SW_FREQ_MAX)
+				freq = EUROPE_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq > ITUREGION1_SW_FREQ_MAX)
+				freq = ITUREGION1_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq > ITUREGION2_SW_FREQ_MAX)
+				freq = ITUREGION2_SW_FREQ_MIN;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq > ITUREGION3_SW_FREQ_MAX)
+				freq = ITUREGION3_SW_FREQ_MIN;
 		}
 
 	}
@@ -1179,7 +1239,7 @@ static int android_radio_FineRight(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_FM_FREQ_MIN)
 				freq = ITUREGION3_FM_FREQ_MAX;
 		}
-	} else {
+	} else if (mtype == 1) {
 		if (cur_model == MODEL_CHINA) {
 			if (freq < CHINA_AM_FREQ_MIN)
 				freq = CHINA_AM_FREQ_MAX;
