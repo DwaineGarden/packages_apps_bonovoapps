@@ -7,8 +7,6 @@
 	<item>@string/ITURegion1</item>
         <item>@string/ITURegion2</item>
         <item>@string/ITURegion3</item>
-        <item>@string/LW</item>
-        <item>@string/SW</item>
     </string-array>
     
     <string-array name="department_value">
@@ -18,7 +16,5 @@
 	<item>4</item>
 	<item>5</item>
 	<item>6</item>
-	<item>7</item>
-	<item>8</item>
     </string-array>
 </resources>
