@@ -137,6 +137,49 @@ typedef enum
 #define ITUREGION3_AM_FREQ_MAX      1611         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
 #define ITUREGION3_AM_STEP_LENGTH   9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
 
+// LongWave
+#define CHINA_LW_FREQ_MIN           531          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define CHINA_LW_FREQ_MAX           1602         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define CHINA_LW_STEP_LENGTH        9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define JNP_LW_FREQ_MIN             522          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define JNP_LW_FREQ_MAX             1620         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define JNP_LW_STEP_LENGTH          9            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define EUROPE_LW_FREQ_MIN          522          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define EUROPE_LW_FREQ_MAX          1620         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define EUROPE_LW_STEP_LENGTH       9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION1_LW_FREQ_MIN      153          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION1_LW_FREQ_MAX      279         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION1_LW_STEP_LENGTH   9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION2_LW_FREQ_MIN      540          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION2_LW_FREQ_MAX      1710         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION2_LW_STEP_LENGTH   10            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION3_LW_FREQ_MIN      531          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION3_LW_FREQ_MAX      1611         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION3_LW_STEP_LENGTH   9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+
+// ShortWave
+#define CHINA_SW_FREQ_MIN           531          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define CHINA_SW_FREQ_MAX           1602         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define CHINA_SW_STEP_LENGTH        9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define JNP_SW_FREQ_MIN             522          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define JNP_SW_FREQ_MAX             1620         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define JNP_SW_STEP_LENGTH          9            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define EUROPE_SW_FREQ_MIN          522          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define EUROPE_SW_FREQ_MAX          1620         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define EUROPE_SW_STEP_LENGTH       9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION1_SW_FREQ_MIN      153          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION1_SW_FREQ_MAX      279         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION1_SW_STEP_LENGTH   9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION2_SW_FREQ_MIN      540          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION2_SW_FREQ_MAX      1710         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION2_SW_STEP_LENGTH   10            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION3_SW_FREQ_MIN      531          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION3_SW_FREQ_MAX      1611         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION3_SW_STEP_LENGTH   9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+
+
+
+
 // standard model selectors
 #define MODEL_CHINA                 0            // �й���ʽ
 #define MODEL_JNP                   1            // �ձ���ʽ
@@ -144,13 +187,15 @@ typedef enum
 #define MODEL_ITUREGION1            3            // ITU Region 1 Frequencies
 #define MODEL_ITUREGION2            4            // ITU Region 2 Frequencies
 #define MODEL_ITUREGION3            5            // ITU Region 3 Frequencies
-#define MODEL_MAX                   5            // Highest number of model selector, this was hard coded to 2 before
+#define MODEL_LW                    6            // LongWave Frequencies
+#define MODEL_SW                    7            // ShortWave Frequencies
+#define MODEL_MAX                   7            // Highest number of model selector, this was hard coded to 2 before
 
 /* band */
 #define BAND_FM                     0            // ��Ƶ
 #define BAND_AM                     1            // ����
-#define BAND_SW                     2            // �̲�
-#define BAND_LW                     3            // ����
+#define BAND_LW                     2            // �̲�
+#define BAND_SW                     3            // ����
 
 struct radio_freq
 {
@@ -334,9 +379,81 @@ int setRangeAndStep(int mode, int band)
 		}
 		break;
 	case BAND_SW:
-	case BAND_LW:
-		debug("SW or LM is not be realized.");
-		return -1;
+		switch(cur_model)
+		{
+		case MODEL_CHINA:
+			freq_min = CHINA_SW_FREQ_MIN;
+			freq_max = CHINA_SW_FREQ_MAX;
+			step_len = CHINA_SW_STEP_LENGTH;
+			break;
+		case MODEL_JNP:
+			freq_min = JNP_SW_FREQ_MIN;
+			freq_max = JNP_SW_FREQ_MAX;
+			step_len = JNP_SW_STEP_LENGTH;
+			break;
+		case MODEL_EUROPE:
+			freq_min = EUROPE_SW_FREQ_MIN;
+			freq_max = EUROPE_SW_FREQ_MAX;
+			step_len = EUROPE_SW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION1:
+			freq_min = ITUREGION1_SW_FREQ_MIN;
+			freq_max = ITUREGION1_SW_FREQ_MAX;
+			step_len = ITUREGION1_SW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION2:
+			freq_min = ITUREGION2_SW_FREQ_MIN;
+			freq_max = ITUREGION2_SW_FREQ_MAX;
+			step_len = ITUREGION2_SW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION3:
+			freq_min = ITUREGION3_SW_FREQ_MIN;
+			freq_max = ITUREGION3_SW_FREQ_MAX;
+			step_len = ITUREGION3_SW_STEP_LENGTH;
+			break;
+		default:
+			LOGE("Current standard model is error.");
+			return -1;
+			break;
+		}
+		break;
+	case BAND_LW:switch(cur_model)
+		{
+		case MODEL_CHINA:
+			freq_min = CHINA_LW_FREQ_MIN;
+			freq_max = CHINA_LW_FREQ_MAX;
+			step_len = CHINA_LW_STEP_LENGTH;
+			break;
+		case MODEL_JNP:
+			freq_min = JNP_LW_FREQ_MIN;
+			freq_max = JNP_LW_FREQ_MAX;
+			step_len = JNP_LW_STEP_LENGTH;
+			break;
+		case MODEL_EUROPE:
+			freq_min = EUROPE_LW_FREQ_MIN;
+			freq_max = EUROPE_LW_FREQ_MAX;
+			step_len = EUROPE_LW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION1:
+			freq_min = ITUREGION1_LW_FREQ_MIN;
+			freq_max = ITUREGION1_LW_FREQ_MAX;
+			step_len = ITUREGION1_LW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION2:
+			freq_min = ITUREGION2_LW_FREQ_MIN;
+			freq_max = ITUREGION2_LW_FREQ_MAX;
+			step_len = ITUREGION2_LW_STEP_LENGTH;
+			break;
+		case MODEL_ITUREGION3:
+			freq_min = ITUREGION3_LW_FREQ_MIN;
+			freq_max = ITUREGION3_LW_FREQ_MAX;
+			step_len = ITUREGION3_LW_STEP_LENGTH;
+			break;
+		default:
+			LOGE("Current standard model is error.");
+			return -1;
+			break;
+		}
 		break;
 	default:
 		LOGE("Current band is error. current band is:%d.", cur_model);
