@@ -22,8 +22,8 @@
 #define HANDLE_CTRL_DEV_MAJOR		230
 #define HANDLE_CTRL_DEV_MINOR		0
 
-#define IOCTL_HANDLE_GET_BRIGHTNESS		    _IO(HANDLE_CTRL_DEV_MAJOR, 1)
-#define IOCTL_HANDLE_GET_WINCEVOLUME		_IO(HANDLE_CTRL_DEV_MAJOR, 2)
+#define IOCTL_HANDLE_GET_BRIGHTNESS	    _IO(HANDLE_CTRL_DEV_MAJOR, 1)
+#define IOCTL_HANDLE_GET_WINCEVOLUME	    _IO(HANDLE_CTRL_DEV_MAJOR, 2)
 #define IOCTL_HANDLE_GET_RADIO_STATUS       _IO(HANDLE_CTRL_DEV_MAJOR, 3)
 #define IOCTL_HANDLE_START_RADIO_SEARCH     _IO(HANDLE_CTRL_DEV_MAJOR, 4)
 #define IOCTL_HANDLE_STOP_RADIO_SEARCH      _IO(HANDLE_CTRL_DEV_MAJOR, 5)
@@ -54,7 +54,7 @@
 // codec status
 typedef enum
 {
-	CODEC_LEVEL_NO_ANALOG = 0,
+    CODEC_LEVEL_NO_ANALOG = 0,
     CODEC_LEVEL_BT_MUSIC = 1,
     CODEC_LEVEL_AV_IN = 2,
     CODEC_LEVEL_DVB = 3,
@@ -187,9 +187,7 @@ typedef enum
 #define MODEL_ITUREGION1            3            // ITU Region 1 Frequencies
 #define MODEL_ITUREGION2            4            // ITU Region 2 Frequencies
 #define MODEL_ITUREGION3            5            // ITU Region 3 Frequencies
-#define MODEL_LW                    6            // LongWave Frequencies
-#define MODEL_SW                    7            // ShortWave Frequencies
-#define MODEL_MAX                   7            // Highest number of model selector, this was hard coded to 2 before
+#define MODEL_MAX                   5            // Highest number of model selector, this was hard coded to 2 before
 
 /* band */
 #define BAND_FM                     0            // ��Ƶ
@@ -805,9 +803,47 @@ static int android_radio_SetFreq(JNIEnv *env, jobject thiz, jint freq)
 			if (freq > ITUREGION3_AM_FREQ_MAX)
 				freq = ITUREGION3_AM_FREQ_MIN;
 		}
-
+	} else {
+		if(cur_model == MODEL_CHINA){
+			if (freq > CHINA_LW_FREQ_MAX)
+				freq = CHINA_LW_FREQ_MIN;
+		}else if(cur_model == MODEL_JNP){
+			if (freq > JNP_LW_FREQ_MAX)
+				freq = JNP_LW_FREQ_MIN;
+		}else if(cur_model == MODEL_EUROPE){
+			if (freq > EUROPE_LW_FREQ_MAX)
+				freq = EUROPE_LW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION1){
+			if (freq > ITUREGION1_LW_FREQ_MAX)
+				freq = ITUREGION1_LW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION2){
+			if (freq > ITUREGION2_LW_FREQ_MAX)
+				freq = ITUREGION2_LW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION3){
+			if (freq > ITUREGION3_LW_FREQ_MAX)
+				freq = ITUREGION3_LW_FREQ_MIN;
+		}
+	} else {
+		if(cur_model == MODEL_CHINA){
+			if (freq > CHINA_SW_FREQ_MAX)
+				freq = CHINA_SW_FREQ_MIN;
+		}else if(cur_model == MODEL_JNP){
+			if (freq > JNP_SW_FREQ_MAX)
+				freq = JNP_SW_FREQ_MIN;
+		}else if(cur_model == MODEL_EUROPE){
+			if (freq > EUROPE_SW_FREQ_MAX)
+				freq = EUROPE_SW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION1){
+			if (freq > ITUREGION1_SW_FREQ_MAX)
+				freq = ITUREGION1_SW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION2){
+			if (freq > ITUREGION2_SW_FREQ_MAX)
+				freq = ITUREGION2_SW_FREQ_MIN;
+		}else if(cur_model == MODEL_ITUREGION3){
+			if (freq > ITUREGION3_SW_FREQ_MAX)
+				freq = ITUREGION3_SW_FREQ_MIN;
+		}
 	}
-
 
 	cmdBuf[6] = freq & 0x0FF;
 	cmdBuf[7] = (freq>>8)& 0x0FF;
