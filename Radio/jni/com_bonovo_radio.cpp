@@ -1259,6 +1259,46 @@ static int android_radio_FineRight(JNIEnv *env, jobject thiz, jint freq)
 			if (freq < ITUREGION3_AM_FREQ_MIN)
 				freq = ITUREGION3_AM_FREQ_MAX;
 		}
+	} else if (mtype == 2) {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_LW_FREQ_MIN)
+				freq = CHINA_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_LW_FREQ_MIN)
+				freq = JNP_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_LW_FREQ_MIN)
+				freq = EUROPE_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_LW_FREQ_MIN)
+				freq = ITUREGION1_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_LW_FREQ_MIN)
+				freq = ITUREGION2_LW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_LW_FREQ_MIN)
+				freq = ITUREGION3_LW_FREQ_MAX;
+		}
+	} else if (mtype == 3) {
+		if (cur_model == MODEL_CHINA) {
+			if (freq < CHINA_SW_FREQ_MIN)
+				freq = CHINA_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_JNP) {
+			if (freq < JNP_SW_FREQ_MIN)
+				freq = JNP_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_EUROPE) {
+			if (freq < EUROPE_SW_FREQ_MIN)
+				freq = EUROPE_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION1) {
+			if (freq < ITUREGION1_SW_FREQ_MIN)
+				freq = ITUREGION1_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION2) {
+			if (freq < ITUREGION2_SW_FREQ_MIN)
+				freq = ITUREGION2_SW_FREQ_MAX;
+		} else if (cur_model == MODEL_ITUREGION3) {
+			if (freq < ITUREGION3_SW_FREQ_MIN)
+				freq = ITUREGION3_SW_FREQ_MAX;
+		}
 
 	}
 
@@ -1493,8 +1533,8 @@ static int android_radio_ReadSeek(JNIEnv *env, jobject thiz, jintArray freq, int
  * @param[in] type Ƶ�α��
  *            - 0  FM
  *            - 1  AM
- *            - 2  SW,�̲�
- *            - 3  LW,����
+ *            - 2  LW,�̲�
+ *            - 3  SW,����
  * @return    ����ִ�н��
  *            - 0  �ɹ����õ�̨Ƶ��
  *            - -1 ����δ�ɹ��򿪻��ߴ���Ĳ���type��Ч
@@ -1609,7 +1649,7 @@ static int android_radio_SetModel(JNIEnv *env, jobject thiz, jint type)
 static const char *classPathName = "com/example/radio/RadioService";
 static JNINativeMethod methods[] = {
     //{"jniTurnTda7415", "(I)I", (void *)android_radio_TurnTda7415},
-   	{"jniSetVolume", "(I)I", (void *)android_radio_SetVolume},
+    {"jniSetVolume", "(I)I", (void *)android_radio_SetVolume},
     {"jniSetMute", "(I)I", (void *)android_radio_SetMute},
     {"jniGetMute", "()I", (void *)android_radio_GetMute},
     {"jniPowerOnoff", "(I)I", (void *)android_radio_PowerOnoff},
@@ -1621,8 +1661,8 @@ static JNINativeMethod methods[] = {
     {"jniStepRight", "(I)I", (void *)android_radio_StepRight},
     {"jniAutoSeek", "(I)I", (void *)android_radio_AutoSeek},
     {"jniReadSeek", "([II)I", (void *)android_radio_ReadSeek},
-	{"jniSetModel", "(I)I", (void *)android_radio_SetModel},
-	{"jniSetRemote", "(I)I", (void *)android_radio_Remote},
+    {"jniSetModel", "(I)I", (void *)android_radio_SetModel},
+    {"jniSetRemote", "(I)I", (void *)android_radio_Remote},
 };
 
 /*
