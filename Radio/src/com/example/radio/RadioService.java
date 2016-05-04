@@ -76,8 +76,6 @@ public class RadioService extends Service implements RadioInterface,
 	public static final int ITUREGION1_MODEL = 3;
 	public static final int ITUREGION2_MODEL = 4;
 	public static final int ITUREGION3_MODEL = 5;
-	public static final int LW_MODEL = 6;
-	public static final int SW_MODEL = 7;
 	
 	public static int RADIO_MODEL = 0;
 	
