@@ -192,6 +192,22 @@
             android:layout_marginLeft="1dp"
             android:layout_marginTop="349dp"
             android:background="@drawable/btnbottonam" />
+            
+        <Button
+            android:id="@+id/btnLW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="349dp"
+            android:background="@drawable/btnbottonlw" />
+        
+        <Button
+            android:id="@+id/btnSW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="349dp"
+            android:background="@drawable/btnbottonsw" />
         
         <Button
             android:id="@+id/collect"
