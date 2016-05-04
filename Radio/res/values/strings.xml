@@ -33,8 +33,8 @@
     <string name="alert_dialog_cancel">Cancel</string>
     <string name="valid_freq_fm">Please Enter Valid FM Freq：87.5-108.0MHz</string>
     <string name="valid_freq_am">Please Enter Valid AM Freq：520-1710KHz</string>
-    <string name="valid_freq_LW">Please Enter Valid AM Freq：144-220KHz</string>
-    <string name="valid_freq_SW">Please Enter Valid AM Freq：3.2-30MHz</string>
+    <string name="valid_freq_LW">Please Enter Valid LW Freq：144-220KHz</string>
+    <string name="valid_freq_SW">Please Enter Valid SW Freq：3.2-30MHz</string>
     <string name="searchwait">Searching Now, Please Wait For A While...</string>
     <string name="china">China</string>
     <string name="japan">Japan</string>
