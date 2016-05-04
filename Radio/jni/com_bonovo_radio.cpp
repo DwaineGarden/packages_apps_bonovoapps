@@ -140,42 +140,42 @@ typedef enum
 // LongWave band support (144–288 kHz)
 #define CHINA_LW_FREQ_MIN           144          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define CHINA_LW_FREQ_MAX           288         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define CHINA_LW_STEP_LENGTH        1            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define CHINA_LW_STEP_LENGTH        9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
 #define JNP_LW_FREQ_MIN             144          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define JNP_LW_FREQ_MAX             288         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define JNP_LW_STEP_LENGTH          1            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define JNP_LW_STEP_LENGTH          9            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
 #define EUROPE_LW_FREQ_MIN          144          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define EUROPE_LW_FREQ_MAX          288         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define EUROPE_LW_STEP_LENGTH       1            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define EUROPE_LW_STEP_LENGTH       9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
 #define ITUREGION1_LW_FREQ_MIN      144          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define ITUREGION1_LW_FREQ_MAX      288         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION1_LW_STEP_LENGTH   1            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION1_LW_STEP_LENGTH   9            // �й���ʽAM�Ĳ�������KHzΪ��λ��
 #define ITUREGION2_LW_FREQ_MIN      144          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define ITUREGION2_LW_FREQ_MAX      288         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION2_LW_STEP_LENGTH   1            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION2_LW_STEP_LENGTH   9            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
 #define ITUREGION3_LW_FREQ_MIN      144          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
 #define ITUREGION3_LW_FREQ_MAX      288         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION3_LW_STEP_LENGTH   1            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION3_LW_STEP_LENGTH   9            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
 
 // ShortWave band support (2.3–30 MHz)
-#define CHINA_SW_FREQ_MIN           0230          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define CHINA_SW_FREQ_MAX           03000         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define CHINA_SW_STEP_LENGTH        1            // �й���ʽAM�Ĳ�������KHzΪ��λ��
-#define JNP_SW_FREQ_MIN             0230          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define JNP_SW_FREQ_MAX             03000         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define JNP_SW_STEP_LENGTH          1            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
-#define EUROPE_SW_FREQ_MIN          0230          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define EUROPE_SW_FREQ_MAX          03000         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define EUROPE_SW_STEP_LENGTH       1            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
-#define ITUREGION1_SW_FREQ_MIN      0230          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define ITUREGION1_SW_FREQ_MAX      03000         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION1_SW_STEP_LENGTH   1            // �й���ʽAM�Ĳ�������KHzΪ��λ��
-#define ITUREGION2_SW_FREQ_MIN      0230          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define ITUREGION2_SW_FREQ_MAX      03000         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION2_SW_STEP_LENGTH   1            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
-#define ITUREGION3_SW_FREQ_MIN      0230          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
-#define ITUREGION3_SW_FREQ_MAX      03000         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
-#define ITUREGION3_SW_STEP_LENGTH   1            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define CHINA_SW_FREQ_MIN           2300          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define CHINA_SW_FREQ_MAX           30000         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define CHINA_SW_STEP_LENGTH        5            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define JNP_SW_FREQ_MIN             2300          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define JNP_SW_FREQ_MAX             30000         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define JNP_SW_STEP_LENGTH          5            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define EUROPE_SW_FREQ_MIN          2300          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define EUROPE_SW_FREQ_MAX          30000         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define EUROPE_SW_STEP_LENGTH       5            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION1_SW_FREQ_MIN      2300          // �й���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION1_SW_FREQ_MAX      30000         // �й���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION1_SW_STEP_LENGTH   5            // �й���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION2_SW_FREQ_MIN      2300          // �ձ���ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION2_SW_FREQ_MAX      30000         // �ձ���ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION2_SW_STEP_LENGTH   5            // �ձ���ʽAM�Ĳ�������KHzΪ��λ��
+#define ITUREGION3_SW_FREQ_MIN      2300          // ŷ����ʽAM����СƵ��ֵ����KHzΪ��λ��
+#define ITUREGION3_SW_FREQ_MAX      30000         // ŷ����ʽAM�����Ƶ��ֵ����KHzΪ��λ��
+#define ITUREGION3_SW_STEP_LENGTH   5            // ŷ����ʽAM�Ĳ�������KHzΪ��λ��
 
 // standard model selectors
 #define MODEL_CHINA                 0            // �й���ʽ
