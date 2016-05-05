@@ -42,8 +42,6 @@
     <string name="ITURegion1">ITU Region 1 (Europe and Africa)</string>
     <string name="ITURegion2">ITU Region 2 (North/South Americas)</string>
     <string name="ITURegion3">ITU Region 3 (Australia and Asia)</string>
-    <string name="LW">LongWave Tuning (144–288 kHz)</string>
-    <string name="SW">ShortWave Tuning (2.3–30 MHz)</string>
     
     <string name="system">Type Selection</string>
     <string name="volume">Volume</string>
